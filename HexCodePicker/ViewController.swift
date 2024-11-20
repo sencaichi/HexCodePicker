@@ -29,7 +29,8 @@ class ViewController: UIViewController {
         colorView.layer.cornerRadius = 20
         colorView.layer.borderColor = UIColor.black.cgColor
         
-        
+        hexCodeTextField.isEnabled = false
+        hexCodeTextField.isUserInteractionEnabled = true
         
         updateColor()
         updateControls()
@@ -63,7 +64,6 @@ class ViewController: UIViewController {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
-        var alpha: CGFloat = CGFloat(opacitySlider.value)
         
         if redSwitch.isOn {
             red = CGFloat(redSlider.value)
@@ -78,13 +78,8 @@ class ViewController: UIViewController {
         let r = Int(red * 255)
         let g = Int(green * 255)
         let b = Int(blue * 255)
-        let a = Int(alpha * 255)
         
-        if alpha == 1.0 {
-            hexCodeTextField.text = String(format: "#%02X%02X%02X", r, g, b)
-        } else {
-            hexCodeTextField.text = String(format: "#%02X%02X%02X%02X", r, g, b, a)
-        }
+        hexCodeTextField.text = String(format: "#%02X%02X%02X", r, g, b)
     }
     
     func updateControls() {
@@ -97,6 +92,7 @@ class ViewController: UIViewController {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
+        let alpha: CGFloat = CGFloat(opacitySlider.value)
         
         if redSwitch.isOn {
             red = CGFloat(redSlider.value)
@@ -108,7 +104,7 @@ class ViewController: UIViewController {
             blue = CGFloat(blueSlider.value)
         }
         
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
         colorView.backgroundColor = color
     }
     

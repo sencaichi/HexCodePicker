@@ -83,7 +83,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Generate Hex Code"/>
                                 <connections>
                                     <action selector="generateHex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCB-la-8kA"/>
-                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuw-uE-JTo"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBP-h4-38b">
