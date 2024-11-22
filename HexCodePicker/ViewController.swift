@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         colorView.layer.cornerRadius = 20
         colorView.layer.borderColor = UIColor.black.cgColor
         
-        hexCodeTextField.isEnabled = false
+        hexCodeTextField.isEnabled = true
         hexCodeTextField.isUserInteractionEnabled = true
         
         updateColor()
@@ -79,7 +79,17 @@ class ViewController: UIViewController {
         let g = Int(green * 255)
         let b = Int(blue * 255)
         
+        hexCodeTextField.isEnabled = true
+        hexCodeTextField.isUserInteractionEnabled = true
+        
+        // %02X is a "format specifier"
+        // Each component has instructions
+        // % marks the beginning of it "\'"
+        // 0 indicates that zeroes should be used to pad the formatted value
+        // 2 specifies the "width" of the value
+        // X specifies that the number should be formatted as an uppercase hexademical value (A-F)
         hexCodeTextField.text = String(format: "#%02X%02X%02X", r, g, b)
+        
     }
     
     func updateControls() {
